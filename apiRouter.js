@@ -22,6 +22,12 @@ module.exports = (app) => {
 
     apiRoutes.use('/users', userRoutes);
 
-    app.use('/api', requireAuth, apiRoutes);
+    const goalRoutes = express.Router();
+    const GoalController = require('./routes/goal');
+    goalRoutes.get('/', GoalController.getAll);
+    goalRoutes.post('/', GoalController.create);
 
+    apiRoutes.use('/goals', goalRoutes);
+
+    app.use('/api', requireAuth, apiRoutes);
 };
