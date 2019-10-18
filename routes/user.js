@@ -1,4 +1,3 @@
-//const mongoose = require('mongoose');
 const User = require('../data_models/user');
 
 exports.getMe = (req, res, next) => {
