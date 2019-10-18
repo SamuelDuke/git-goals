@@ -5,15 +5,15 @@ exports.loginUser = (req, res, next) => {
 };
 
 exports.registerUser = (req, res, next) => {
-    const { firstName, lastName } = req.body;
+    const { firstName, lastName, email, password } = req.body;
 
 
-    User({ firstName, lastName })
+    User({ firstName, lastName, email, password })
         .save()
         .then(user => {
         return res.json(user);
-})
+    })
 .catch(err => {
         return res.json({msg: "There was an error",error: err});
-})
+    })
 };
