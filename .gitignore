@@ -1,0 +1,8 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+config/
+
+# file: ~/.gitignore_global
+.DS_Store
+.idea
